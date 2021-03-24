@@ -16,7 +16,7 @@ const getCurrency = (currency)=> {
  */
 const getCurrencyByList = (currency)=> {
     const currencyData = JSON.parse(currency);
-    return currencyData.results && currencyData.results[0].currency_id || '';
+    return currencyData.results && currencyData.results.length>0 && currencyData.results[0].currency_id || '';
 };
 /**
  *
