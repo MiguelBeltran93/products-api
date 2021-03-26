@@ -19,7 +19,7 @@ const swaggerOptions = {
                 name: "Miguel Beltran",
                 url: "https://www.linkedin.com/in/miguel-%C3%A1ngel-beltr%C3%A1n-p%C3%A9rez-031174172/"
             },
-            servers: ["http://localhost:8080/"]
+            servers: ["http://localhost:8080/", "https://product-services-test.herokuapp.com/"]
         },
 
     },
