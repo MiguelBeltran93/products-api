@@ -24,7 +24,14 @@ const swaggerOptions = {
 
     },
     basePath: "/",
-    apis: ["/api/items?q=:item"],
+    apis: ["./product-list-controller.js"],
+    paths: {
+        hello: {
+            get: {
+                operationId: "hello"
+            }
+        }
+    }
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);

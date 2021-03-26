@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "document api",
+    "description": "API Documentation fo use"
+  },
+  "host": "product-services-test.herokuapp.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Products",
+      "description": "API for Products in the system"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/items?q=item": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "summary": "Get four items for request",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }, "/items/:id": {
+      "get": {
+        "tags": [
+          "Item detail"
+        ],
+        "summary": "Get detail item for request",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "items": {
+      "required": [
+        "_item"
+      ],
+      "properties": {
+        "_item": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array"
+        }
+      }
+    }
+  }
+}

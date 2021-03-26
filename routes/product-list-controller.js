@@ -5,7 +5,26 @@ const utilList = require('./products-utils');
 let productListController = [];
 let currency = '';
 
-
+/**
+ * @swagger
+ * /api/items?q=:item:
+ *  get:
+ *      summary: GET and add query param q=:item
+ *      description: use to request list products by name item
+ *      produces:
+ *          - application/json
+ *      parameters:
+ *          - in: param
+ *            name: q
+ *            description: name item for search
+ *     responses:
+ *      200:
+ *          description: items search by name
+ *          schema;
+ *          type: json
+ *
+ *
+ */
 router.get('/', function (req, res, next) {
     const searchItem = req.query.q;
     request({
