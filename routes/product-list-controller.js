@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const request = require("request");
-const utilList = require('../public/javascripts/utils');
-let productList = [];
+const utilList = require('./products-utils');
+let productListController = [];
 let currency = '';
 
 
@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
     }, function (error, response, body) {
 
         if (!error && response.statusCode === 200) {
-            productList = body;
+            productListController = body;
             currency = utilList.getCurrencyByList(body);
         }
         next();
@@ -26,7 +26,7 @@ router.get('/', function (req, res, next) {
     }, function (error, response, body) {
 
         if (!error && response.statusCode === 200) {
-            res.send(utilList.buildResponseList(productList, body));
+            res.send(utilList.buildResponseList(productListController, body));
         }
     });
 });
